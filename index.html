@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魏虎杰 - 个人学术主页</title>
+    <!-- Load Tailwind CSS for modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+SC:wght@100..900&display=swap');
+        body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .section-heading {
+            /* Academic blue accent */
+            border-left: 4px solid #007bff;
+            padding-left: 0.75rem;
+        }
+        .pub-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .doc-link-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        .doc-link-item:hover {
+            background-color: #f0f8ff;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin: -0.75rem 0; /* Adjust margin to prevent layout shift */
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-8">
+
+        <!-- Header Section -->
+        <header class="flex flex-col sm:flex-row items-center justify-between bg-white p-6 shadow-2xl rounded-xl mb-10 border-t-8 border-blue-600">
+            <div class="flex items-center space-x-6">
+                <!-- Profile Image Placeholder -->
+                <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-blue-500 flex-shrink-0">
+                    <img src="https://placehold.co/96x96/d1e7ff/007bff?text=HUJIE" alt="魏虎杰照片占位符" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight">魏虎杰 (Hujie Wei)</h1>
+                    <p class="text-xl text-gray-600 mt-1">控制工程硕士, 广西大学 (211工程)</p>
+                    <p class="text-md text-blue-600 font-medium mt-1">目标: 寻求控制理论/自主无人系统方向的博士研究职位</p>
+                </div>
+            </div>
+            
+            <!-- Contact & Quick Links -->
+            <div class="mt-4 sm:mt-0 sm:text-right text-center text-sm space-y-1">
+                <a href="mailto:hujiewei027@gmail.com" class="block text-gray-700 hover:text-blue-600 font-medium">📧 hujiewei027@gmail.com</a>
+                <span class="block text-gray-700">📞 +86 17749176312</span>
+                <!-- Quick link to CV for mobile view -->
+                <a href="Hujie_Wei_CV.pdf" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:underline mt-2 sm:hidden">
+                    下载完整简历 (Quick Link)
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content Grid (Documents | Education/Projects) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+            <!-- Left Column: Interests, Skills & Documents -->
+            <div class="md:col-span-1 space-y-6">
+                
+                <!-- Research Interests -->
+                <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <h2 class="text-xl font-bold mb-4 section-heading text-gray-800">研究兴趣 (Research Interests)</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>**鲁棒/非线性控制 (Robust/Nonlinear Control)**</li>
+                        <li>滑模控制 (Sliding Mode Control, SMC)</li>
+                        <li>自主无人系统 (Autonomous Unmanned Systems)</li>
+                        <li>强化学习 (Reinforcement Learning)</li>
+                    </ul>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <h2 class="text-xl font-bold mb-4 section-heading text-gray-800">专业技能 (Skills)</h2>
+                    <div class="space-y-2">
+                        <p class="text-sm font-semibold text-gray-800">控制与仿真</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs">MATLAB/Simulink (精通)</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs">SMC, NDOB/ESO</span>
+                        </div>
+
+                        <p class="text-sm font-semibold text-gray-800 pt-2">编程与语言</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs">C, Python</span>
+                            <span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs">LaTeX (专业排版)</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs">雅思 7.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Links Section (Side/Bottom Placement) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <h2 class="text-xl font-bold mb-2 section-heading text-gray-800">重要文档 (Key Documents)</h2>
+                    <p class="text-xs text-gray-500 mb-4">点击以下链接可直接预览 PDF 原件 (需替换链接)</p>
+                    
+                    <a href="Hujie_Wei_CV.pdf" target="_blank" class="doc-link-item text-blue-600 font-medium hover:text-blue-800">
+                        <svg class="w-5 h-5 mr-3 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6a2 2 0 01.586 1.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 4a1 1 0 000 2h8a1 1 0 000-2H6z" clip-rule="evenodd"></path></svg>
+                        <span class="flex-grow">个人简历 (Curriculum Vitae)</span>
+                    </a>
+                    
+                    <a href="Hujie_Wei_Transcript.pdf" target="_blank" class="doc-link-item text-blue-600 font-medium hover:text-blue-800">
+                        <svg class="w-5 h-5 mr-3 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 6a1 1 0 011-1h10a1 1 0 011 1v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path></svg>
+                        <span class="flex-grow">成绩单 (Official Transcript)</span>
+                    </a>
+                    
+                    <a href="Hujie_Wei_Master_Thesis.pdf" target="_blank" class="doc-link-item text-blue-600 font-medium hover:text-blue-800">
+                        <svg class="w-5 h-5 mr-3 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6a2 2 0 01.586 1.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 4a1 1 0 000 2h8a1 1 0 000-2H6z" clip-rule="evenodd"></path></svg>
+                        <span class="flex-grow">硕士论文全文 (Full Thesis PDF)</span>
+                    </a>
+                </div>
+                
+            </div>
+
+            <!-- Right Column: Education & Experience -->
+            <div class="md:col-span-2 space-y-6">
+
+                <!-- Education -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h2 class="text-xl font-bold mb-4 section-heading text-gray-800">教育背景 (Education)</h2>
+                    <div class="space-y-4">
+                        <!-- Master's -->
+                        <div class="border-b pb-3">
+                            <h3 class="text-lg font-semibold text-gray-900">控制工程 硕士学位</h3>
+                            <p class="text-blue-600 font-medium">广西大学 (Project 211)</p>
+                            <p class="text-sm text-gray-500">2020.09 – 2023.07 | 平均成绩 (Weighted Average Scores): 86/100</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-1">
+                                <li>核心课程: 线性系统理论, 系统辨识与自适应控制, 非线性系统控制。</li>
+                            </ul>
+                        </div>
+                        <!-- Bachelor's -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">通信工程 学士学位</h3>
+                            <p class="text-blue-600 font-medium">西安工业大学</p>
+                            <p class="text-sm text-gray-500">2016.09 – 2020.07 | 平均成绩: 77/100</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-1">
+                                <li>核心课程: 信号与系统, 数字电子技术, 通信原理。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Experience -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h2 class="text-xl font-bold mb-4 section-heading text-gray-800">核心研究与项目经验 (Core Research and Projects)</h2>
+                    <div class="space-y-4">
+                        
+                        <h3 class="font-bold text-lg text-blue-800">四旋翼无人机轨迹跟踪控制研究</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
+                            <li>**创新设计：** 设计了结合**自适应快速非奇异终端滑模 (AFNTSM)** 和 **非线性扰动观测器 (NDOB)** 的双闭环鲁棒控制系统。</li>
+                            <li>**成果：** 解决了滑模控制中的**奇异性**问题，通过**死区方法**防止了参数过估计，提高了系统鲁棒性和收敛速度。</li>
+                        </ul>
+
+                        <h3 class="font-bold text-lg text-blue-800 pt-3">垂直起降无人机精确着陆项目 (Xi'an Inno Aviation)</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600 ml-4">
+                            <li>**性能提升：** 优化了 VTOL 无人机精确着陆算法，通过引入**前馈补偿**，成功将强风环境下的着陆位置误差控制在 **20cm 以内**。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Publications Section -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h2 class="text-xl font-bold mb-4 section-heading text-gray-800">精选论文 (Selected Publications)</h2>
+                    <div class="space-y-4">
+                        
+                        <!-- Publication 1 (SCI Q3) -->
+                        <div class="border-b pb-4">
+                            <p class="text-md font-medium text-gray-800">
+                                <span class="bg-red-100 text-red-700 text-xs font-semibold px-2 py-0.5 rounded-full mr-2">SCI, Q3</span>
+                                **Adaptive fast nonsingular terminal sliding mode tracking control for quadrotor with disturbances compensation and actuator saturation**
+                            </p>
+                            <p class="text-sm text-gray-600 mt-1">
+                                Wei H, Jiang Y. 
+                                <em class="italic">Proc IMechE Part C: Journal of Mechanical Engineering Science</em>, 2023;238(2):301-319.
+                            </p>
+                            <a href="https://doi.org/10.1177/09544062231167026" target="_blank" class="pub-link text-sm text-blue-600">
+                                DOI: 10.1177/09544062231167026
+                            </a>
+                        </div>
+
+                        <!-- Publication 2 (EI) -->
+                        <div>
+                            <p class="text-md font-medium text-gray-800">
+                                 <span class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-2 py-0.5 rounded-full mr-2">EI Indexed</span>
+                                **Adaptive Quasi-sliding Mode Tracking Control for Quadrotors with Input Saturation**
+                            </p>
+                            <p class="text-sm text-gray-600 mt-1">
+                                Wei H, Jiang Y, Luo S.
+                                <em class="italic">2022 41st Chinese control conference (CCC)</em>, IEEE, 2022.
+                            </p>
+                            <a href="https://doi.org/10.23919/CCC55666.2022.9902565" target="_blank" class="pub-link text-sm text-blue-600">
+                                DOI: 10.23919/CCC55666.2022.9902565
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="text-center py-6 mt-10 border-t-2 border-gray-200">
+             <p class="text-gray-600 mb-2">感谢您的时间，期待与您交流我的研究工作在 [请根据教授方向修改，如：鲁棒控制/无人机系统] 领域的应用。</p>
+             <p class="text-xs text-gray-400">版权所有 © 魏虎杰 (Hujie Wei) - 基于 GitHub Pages 托管</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
