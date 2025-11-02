@@ -11,13 +11,32 @@ body {
   line-height: 1.6;
 }
 
-header {
-  text-align: center;
-  padding: 2rem 1rem;
+/* --- NAVIGATION --- */
+.top-nav {
   background: #f5f9ff;
+  padding: 0.8rem 0;
+  text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
+.top-nav a {
+  color: #003366;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+}
 
+/* --- HEADER PROFILE --- */
+header {
+  text-align: center;
+  background: #f5f9ff;
+  padding-bottom: 0;
+}
+.profile {
+  padding: 1.5rem 1rem;
+}
 .portrait {
   width: 150px;
   height: 150px;
@@ -26,18 +45,15 @@ header {
   border: 3px solid #d6e4ff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
 h1 {
   font-size: 1.8rem;
   margin-top: 1rem;
   color: #003366;
 }
-
 header p {
   color: #444;
   margin-bottom: 1rem;
 }
-
 .links a {
   display: inline-block;
   margin: 0.3rem;
@@ -48,47 +64,56 @@ header p {
   text-decoration: none;
   transition: background 0.2s;
 }
-
 .links a:hover {
   background: #cfe2ff;
 }
 
-nav {
-  margin-top: 1rem;
+/* --- BACKGROUND BANNER --- */
+.banner img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  opacity: 0.9;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-nav a {
-  color: #003366;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
+/* --- MAIN CONTENT --- */
 main {
   width: 80%;
   max-width: 900px;
   margin: 2rem auto;
 }
-
 section {
   margin-bottom: 2rem;
 }
-
 h2 {
   color: #003366;
   border-left: 4px solid #6699ff;
   padding-left: 8px;
   margin-bottom: 0.5rem;
 }
-
 ul, ol {
   margin-left: 1.2rem;
 }
 
+/* --- PDF BUTTON --- */
+.pdf-btn {
+  display: inline-block;
+  margin-left: 8px;
+  background: #eaf3ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #003366;
+  border: 1px solid #d0e0ff;
+}
+.pdf-btn:hover {
+  background: #cfe2ff;
+}
+
+/* --- CASUAL PHOTO --- */
 .casual-photo img {
   display: block;
   width: 100%;
@@ -98,6 +123,7 @@ ul, ol {
   margin-top: 2rem;
 }
 
+/* --- FOOTER --- */
 footer {
   text-align: center;
   padding: 1rem;
