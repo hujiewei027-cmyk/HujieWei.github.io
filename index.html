@@ -21,11 +21,8 @@
 
         /* Sidebar styling for full background coverage */
         #sidebar {
-            /* ---------------------------------------------------------------------- */
-            /* !!! 背景图片路径已更新为: 截屏2025-10-26 14.38.22.png !!! */
-            /* ---------------------------------------------------------------------- */
-            background-image: url('background.jpg'); 
-            /* ---------------------------------------------------------------------- */
+            /* 背景图片路径已更新为: 截屏2025-10-26 14.38.22.png */
+            background-image: url('截屏2025-10-26 14.38.22.png'); 
             
             background-size: cover;
             background-position: center;
@@ -97,12 +94,12 @@
             
             <!-- Sidebar Top Content -->
             <div class="w-full flex flex-col items-center">
-                <!-- Avatar Placeholder: 请将 src URL 替换为您上传的头像文件路径 (例如: profile_photo.png) -->
-                <div class="w-32 h-32 bg-indigo-100 rounded-full border-4 border-white overflow-hidden mb-4 shadow-xl">
-                    <img src="profile.jpg" 
+                <!-- 个人头像容器：已将 object-cover 修改为 object-contain，确保图片完整显示 -->
+                <div class="w-32 h-32 bg-white rounded-full border-4 border-white overflow-hidden mb-4 shadow-xl flex items-center justify-center">
+                    <img src="profile_photo.png" 
                          onerror="this.onerror=null;this.src='https://placehold.co/128x128/374151/ffffff?text=H+W';" 
                          alt="Hujie Wei Avatar" 
-                         class="w-full h-full object-cover">
+                         class="max-w-full max-h-full object-contain">
                 </div>
 
                 <!-- Name and Title -->
