@@ -19,19 +19,18 @@
             padding: 0;
         }
 
-        /* Sidebar styling for full background coverage */
+        /* -------------------------------------------------------------------------- */
+        /* FIX: Mobile Default Layout (Stacking) */
+        /* 侧边栏默认在移动端 (小于 1024px) 是正常流动的块级元素 */
+        /* -------------------------------------------------------------------------- */
         #sidebar {
-            /* 背景图片路径已更新为: 截屏2025-10-26 14.38.22.png */
-            background-image: url('background.jpg'); 
-            
+            /* 背景图片路径 */
+            background-image: url('截屏2025-10-26 14.38.22.png'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             
-            /* Desktop Layout */
-            position: fixed;
-            height: 100vh;
-            width: 320px; 
+            width: 100%; /* Mobile: Full width */
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
@@ -46,14 +45,23 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding-top: 2rem; /* p-8 equivalent */
+            padding-top: 2rem; 
             padding-bottom: 2rem;
             padding-left: 2rem;
             padding-right: 2rem;
         }
 
+        /* -------------------------------------------------------------------------- */
         /* Desktop Layout (lg breakpoint and up) */
+        /* 只有在桌面端 (>= 1024px) 才应用固定定位和高度 */
+        /* -------------------------------------------------------------------------- */
         @media (min-width: 1024px) {
+            #sidebar {
+                position: fixed; /* Apply fixed only here */
+                height: 100vh; /* Full viewport height on desktop */
+                width: 320px; /* Fixed width on desktop */
+                flex-direction: column;
+            }
             #main-content {
                 margin-left: 320px; /* Offset the main content by sidebar width */
                 overflow-y: auto;
@@ -86,7 +94,7 @@
 </head>
 <body class="flex flex-col lg:flex-row h-full">
 
-    <!-- 1. FIXED LEFT SIDEBAR (w-80) with Full Background Image -->
+    <!-- 1. SIDEBAR (Stacks on mobile, Fixed on desktop) -->
     <aside id="sidebar" class="w-full lg:w-80 border-r border-gray-200 shadow-xl flex flex-col">
         
         <!-- Sidebar Content Wrapper with Overlay for Readability -->
@@ -96,7 +104,7 @@
             <div class="w-full flex flex-col items-center">
                 <!-- 个人头像容器：已将 object-cover 修改为 object-contain，确保图片完整显示 -->
                 <div class="w-32 h-32 bg-white rounded-full border-4 border-white overflow-hidden mb-4 shadow-xl flex items-center justify-center">
-                    <img src="profile3.jpg" 
+                    <img src="profile_photo.png" 
                          onerror="this.onerror=null;this.src='https://placehold.co/128x128/374151/ffffff?text=H+W';" 
                          alt="Hujie Wei Avatar" 
                          class="max-w-full max-h-full object-contain">
@@ -118,7 +126,7 @@
                     </div>
                     <div class="flex items-center">
                         <i data-lucide="github" class="w-5 h-5 text-indigo-300 mr-3"></i>
-                        <a href="https://github.com/hujiewei027-cmyk/HujieWei.github.io" target="_blank" class="hover:text-indigo-100 transition truncate">GitHub Profile</a>
+                        <a href="https://github.com/your-github-username" target="_blank" class="hover:text-indigo-100 transition truncate">GitHub Profile</a>
                     </div>
                     <div class="flex items-center">
                         <i data-lucide="map-pin" class="w-5 h-5 text-indigo-300 mr-3"></i>
@@ -130,10 +138,10 @@
             <!-- CV and Transcript Links (Pushed to the bottom by flex-grow above) -->
             <div class="pt-6 border-t border-gray-500 w-full mt-8 space-y-3">
                 <p class="text-xs uppercase tracking-wider font-bold text-gray-300 mb-2">Essential Documents</p>
-                <a href="CV_Hujie_Wei.pdf" target="_blank" class="flex items-center font-bold text-base text-green-300 hover:text-white transition">
+                <a href="CV_Hujie Wei.pdf" target="_blank" class="flex items-center font-bold text-base text-green-300 hover:text-white transition">
                     <i data-lucide="file-text" class="w-5 h-5 mr-3"></i> Curriculum Vitae (CV)
                 </a>
-                <a href="transcript.pdf" target="_blank" class="flex items-center font-bold text-base text-red-300 hover:text-white transition">
+                <a href="CV_Hujie Wei.pdf" target="_blank" class="flex items-center font-bold text-base text-red-300 hover:text-white transition">
                     <i data-lucide="graduation-cap" class="w-5 h-5 mr-3"></i> Academic Transcript
                 </a>
             </div>
@@ -141,7 +149,7 @@
         </div>
     </aside>
 
-    <!-- 2. SCROLLABLE RIGHT MAIN CONTENT -->
+    <!-- 2. SCROLLABLE RIGHT MAIN CONTENT (Flows naturally on mobile) -->
     <main id="main-content" class="flex-grow bg-gray-50 h-full lg:h-screen p-0">
         
         <!-- Sticky Navigation Bar -->
