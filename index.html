@@ -159,6 +159,7 @@
                 <button onclick="scrollToSection('research')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition">Research</button>
                 <button onclick="scrollToSection('publications')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition">Publications</button>
                 <button onclick="scrollToSection('experience')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition">Experience</button>
+                <button onclick="scrollToSection('awards')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition flex-shrink-0">Awards & Honors</button>
             </div>
         </nav>
 
@@ -375,7 +376,7 @@
         // Handle scroll event for section highlighting
         window.onload = function() {
             const mainContent = document.getElementById('main-content');
-            const sections = ['about', 'research', 'publications', 'experience'];
+            const sections = ['about', 'research', 'publications', 'experience', 'awards'];
             
             // Set initial highlight
             updateNavHighlight('about');
