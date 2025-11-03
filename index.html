@@ -1,77 +1,347 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hujie Wei | Robotics and Control</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hujie Wei - Academic Profile</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Essential CSS for Fixed Sidebar Layout and Responsiveness */
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            /* Important for full height containers */
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Desktop Layout (lg breakpoint and up) */
+        @media (min-width: 1024px) {
+            #sidebar {
+                position: fixed;
+                height: 100vh;
+                width: 320px; /* Tailwind w-80 */
+                flex-shrink: 0;
+            }
+            #main-content {
+                margin-left: 320px; /* Offset the main content by sidebar width */
+                overflow-y: auto;
+                max-height: 100vh;
+            }
+        }
+        
+        /* Mobile/Tablet Layout (Sidebar scrolls normally with content) */
+        @media (max-width: 1023px) {
+            #main-content {
+                overflow-y: visible; /* Standard scrolling */
+            }
+        }
+
+        #main-content {
+            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+        }
+
+        /* Sidebar background image */
+        #sidebar-bg-image {
+            background-image: url('https://placehold.co/400x150/4c51bf/ffffff?text=Control+Systems+Theory');
+            background-size: cover;
+            background-position: center;
+            height: 150px;
+        }
+
+        /* Sticky Navbar */
+        #navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .publication-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .publication-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            background-color: #ffffff;
+        }
+    </style>
 </head>
-<body>
+<body class="flex flex-col lg:flex-row h-full">
 
-  <div class="container">
+    <!-- 1. FIXED LEFT SIDEBAR (w-80) -->
+    <aside id="sidebar" class="w-full lg:w-80 bg-white border-r border-gray-200 shadow-xl flex flex-col">
+        
+        <!-- Sidebar Content -->
+        <div class="p-8 flex flex-col items-center flex-grow">
+            <!-- Avatar Placeholder -->
+            <div class="w-32 h-32 bg-indigo-100 rounded-full border-4 border-indigo-600 overflow-hidden mb-4">
+                <img src="https://placehold.co/128x128/374151/ffffff?text=H+W" onerror="this.onerror=null;this.src='https://placehold.co/128x128/374151/ffffff?text=H+W';" alt="Hujie Wei Avatar" class="w-full h-full object-cover">
+            </div>
 
-    <!-- 左侧边栏 -->
-    <aside class="sidebar">
-      <div class="profile-section">
-        <img src="portrait.jpg" alt="Portrait of Hujie Wei" class="portrait">
-        <h2>Hujie Wei</h2>
-        <p>Robotics and Control Researcher</p>
-      </div>
+            <!-- Name and Title -->
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-1">Hujie Wei</h1>
+            <p class="text-lg font-semibold text-indigo-700 mb-4 text-center">M.E. in Control Engineering</p>
 
-      <!-- 背景图 -->
-      <div class="sidebar-background">
-        <img src="background.jpg" alt="Background image">
-      </div>
+            <!-- Contact Information -->
+            <div class="space-y-3 text-sm text-gray-700 w-full mt-4">
+                <div class="flex items-center">
+                    <i data-lucide="mail" class="w-5 h-5 text-indigo-500 mr-3"></i>
+                    <a href="mailto:hujiewei027@gmail.com" class="hover:text-indigo-600 transition truncate">hujiewei027@gmail.com</a>
+                </div>
+                <div class="flex items-center">
+                    <i data-lucide="phone" class="w-5 h-5 text-indigo-500 mr-3"></i>
+                    <span>+86 17749176312</span>
+                </div>
+                <div class="flex items-center">
+                    <i data-lucide="github" class="w-5 h-5 text-indigo-500 mr-3"></i>
+                    <a href="https://github.com/your-github-username" target="_blank" class="hover:text-indigo-600 transition truncate">GitHub Profile</a>
+                </div>
+                <div class="flex items-center">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-indigo-500 mr-3"></i>
+                    <span>Xi'an, China (Based on CV)</span>
+                </div>
+                <!-- CV and Transcript Links -->
+                <div class="pt-4 border-t mt-4 border-gray-100 space-y-2">
+                    <a href="CV_Hujie Wei.pdf" target="_blank" class="flex items-center font-bold text-base text-green-600 hover:text-green-700 transition">
+                        <i data-lucide="file-text" class="w-5 h-5 mr-3"></i> Curriculum Vitae (CV)
+                    </a>
+                    <!-- NOTE: Using CV file as a placeholder for Transcript as requested -->
+                    <a href="CV_Hujie Wei.pdf" target="_blank" class="flex items-center font-bold text-base text-red-600 hover:text-red-700 transition">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 mr-3"></i> Academic Transcript
+                    </a>
+                </div>
+            </div>
+        </div>
 
-      <div class="links">
-        <a href="CV_Hujie_Wei.pdf" target="_blank">📄 View CV</a>
-        <a href="publications.pdf" target="_blank">📘 Publications</a>
-        <a href="transcript.pdf" target="_blank">🎓 Transcript</a>
-      </div>
-
-      <hr>
-      <p>Email: <a href="mailto:hujiewei027@gmail.com">hujiewei027@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/hujiewei027" target="_blank">hujiewei027</a></p>
-      <p>LinkedIn: <a href="#" target="_blank">LinkedIn</a></p>
+        <!-- Sidebar Bottom Background Image -->
+        <div id="sidebar-bg-image" class="w-full">
+        </div>
     </aside>
 
-    <!-- 右侧主要内容 -->
-    <main class="content">
-      <!-- 导航栏 -->
-      <nav class="top-nav">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#awards">Awards</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <!-- 2. SCROLLABLE RIGHT MAIN CONTENT -->
+    <main id="main-content" class="flex-grow bg-gray-50 h-full lg:h-screen p-0">
+        
+        <!-- Sticky Navigation Bar -->
+        <nav id="navbar" class="bg-white shadow-md p-4 lg:px-10">
+            <div class="flex space-x-6">
+                <button onclick="scrollToSection('about')" class="nav-link text-indigo-700 font-bold hover:text-indigo-900 transition">About Me</button>
+                <button onclick="scrollToSection('research')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition">Research</button>
+                <button onclick="scrollToSection('publications')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition">Publications</button>
+                <button onclick="scrollToSection('experience')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition">Experience</button>
+            </div>
+        </nav>
 
-      <!-- 页面内容 -->
-      <section id="about">
-        <h3>About</h3>
-        <p>Hujie Wei is a robotics researcher focusing on control algorithms, reinforcement learning, and UAV–UGV coordination...</p>
-      </section>
+        <!-- Main Content Sections -->
+        <div class="p-4 lg:p-10 max-w-5xl mx-auto">
 
-      <section id="education">
-        <h3>Education</h3>
-        <p>Details about degrees, universities, and timelines...</p>
-      </section>
+            <!-- A. About Me -->
+            <section id="about" class="mb-12 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-4 border-b-4 border-indigo-600 pb-2">👋 About Me</h2>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    I am **Hujie Wei**, a Control Engineering graduate with an M.E. degree focused on the development and implementation of advanced control algorithms for autonomous unmanned systems. My core expertise lies in **Nonlinear Control**, **Sliding Mode Control (SMC)**, and **Disturbance Rejection**.
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-3">
+                    During my Master's studies, I successfully designed a double closed-loop control system, combining an **Adaptive Fast Nonsingular Terminal Sliding Mode (AFNTSM)** controller with a **Nonlinear Disturbance Observer (NDOB)**. This method effectively achieved high-precision trajectory tracking for a quadrotor UAV, specifically addressing external disturbances and actuator saturation while ensuring stability via the Lyapunov direct method.
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-3 font-semibold">
+                    My current interests include expanding into **Multi-Agent Cooperative Control**, **Reinforcement Learning (RL)** for control optimization, and applying robust methods to complex dynamic systems.
+                </p>
+            </section>
 
-      <section id="research">
-        <h3>Research</h3>
-        <p>Focus on control and planning algorithms for multi-robot systems.</p>
-      </section>
+            <!-- B. Research Interests -->
+            <section id="research" class="mb-12 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-4 border-b-4 border-indigo-600 pb-2">🔍 Research Interests</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-base font-medium">Control Theory</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-base font-medium">Autonomous Unmanned Systems</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-base font-medium">Sliding Mode Control (SMC)</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-base font-medium">Nonlinear Disturbance Observer (NDOB)</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-base font-medium">Reinforcement Learning (RL)</span>
+                    <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-base font-medium">Cooperative Control</span>
+                </div>
+            </section>
+            
+            <!-- C. Publications -->
+            <section id="publications" class="mb-12 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-indigo-600 pb-2">📜 Publications</h2>
+                <div class="space-y-6">
 
-      <section id="publications">
-        <h3>Publications</h3>
-        <ul>
-          <li>Wei, H. et al. “MPC-based Cooperative UAV–UGV Control.” <a href="paper1.pdf" target="_blank" class="pdf-btn">[PDF]</a></li>
-          <li>Wei, H. “Hierarchical Reinforcement Learning for Robot Decision-Making.” <a href="paper2.pdf" target="_blank" class="pdf-btn">[PDF]</a></li>
-        </ul>
-      </section>
+                    <!-- Publication 1: SCI Q3 Journal -->
+                    <div class="publication-item p-4 border border-gray-100 rounded-lg">
+                        <p class="text-xl font-semibold text-gray-900 leading-snug">
+                            Adaptive fast nonsingular terminal sliding mode tracking control for quadrotor with disturbances compensation and actuator saturation
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">
+                            <span class="font-medium text-indigo-600">Journal:</span> Proc IMechE Part C: Journal of Mechanical Engineering Science (SCI, JCR Q3)
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            <span class="font-medium text-indigo-600">Authors:</span> Wei H, Jiang Y. | <span class="text-xs">DOI: 10.1177/09544062231167026</span>
+                        </p>
+                        <a href="publications_hujiewei.pdf" target="_blank" class="mt-3 inline-flex items-center text-base font-semibold text-red-600 hover:text-red-800 transition">
+                            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i> PDF Link
+                        </a>
+                    </div>
+
+                    <!-- Publication 2: EI Conference -->
+                    <div class="publication-item p-4 border border-gray-100 rounded-lg">
+                        <p class="text-xl font-semibold text-gray-900 leading-snug">
+                            Adaptive Quasi-sliding Mode Tracking Control for Quadrotors with Input Saturation
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">
+                            <span class="font-medium text-indigo-600">Conference:</span> 2022 41st Chinese Control Conference (CCC) (EI indexed)
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            <span class="font-medium text-indigo-600">Authors:</span> Wei H, Jiang Y, Luo S. | <span class="text-xs">DOI: 10.23919/CCC55666.2022.9902565</span>
+                        </p>
+                        <a href="template_y.pdf" target="_blank" class="mt-3 inline-flex items-center text-base font-semibold text-red-600 hover:text-red-800 transition">
+                            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i> PDF Link (Full Text)
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- D. Experience & Education -->
+            <section id="experience" class="mb-12 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-indigo-600 pb-2">💼 Experience & Education</h2>
+                
+                <!-- Education -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">Education</h3>
+                    <div class="space-y-4 border-l-4 border-indigo-200 pl-4">
+                        <!-- Master's -->
+                        <div class="relative">
+                            <div class="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1 -left-[18.5px] border-2 border-white"></div>
+                            <p class="font-bold text-xl text-gray-900">M.E. in Control Engineering</p>
+                            <p class="text-lg text-gray-800">Guangxi University (Project 211), China</p>
+                            <p class="text-sm text-gray-600">Sep 2020 – Jul 2023 | Weighted Average Score: 86/100</p>
+                            <p class="text-sm text-gray-500 mt-1">Key Courses: Linear Systems Theory, Nonlinear System Control, System Identification and Adaptive Control.</p>
+                        </div>
+                        <!-- Bachelor's -->
+                        <div class="relative">
+                            <div class="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1 -left-[18.5px] border-2 border-white"></div>
+                            <p class="font-bold text-xl text-gray-900">B.E. in Communication Engineering</p>
+                            <p class="text-lg text-gray-800">Xi'an Technological University, China</p>
+                            <p class="text-sm text-gray-600">Sep 2016 – Jul 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="mt-8">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">Professional Experience</h3>
+                    <div class="space-y-6 border-l-4 border-indigo-200 pl-4">
+                        
+                        <!-- Experience 1: Flight Control -->
+                        <div class="relative">
+                            <div class="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1 -left-[18.5px] border-2 border-white"></div>
+                            <p class="font-bold text-xl text-gray-900">Flight Control Algorithm Engineer</p>
+                            <p class="text-lg text-gray-800">Xi'an Inno Aviation Technology Co., Ltd. | Xi'an, China</p>
+                            <p class="text-sm text-gray-600">Jul 2023 – Dec 2023</p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 ml-2 mt-1 space-y-0.5">
+                                <li>Reduced VTOL fixed-wing precise landing position error to **within 20cm** by implementing a feedforward compensation term.</li>
+                                <li>Addressed autonomous precise landing challenges under severe wind disturbances.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Experience 2: Lecturer -->
+                        <div class="relative">
+                            <div class="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1 -left-[18.5px] border-2 border-white"></div>
+                            <p class="font-bold text-xl text-gray-900">University-Enterprise Lecturer</p>
+                            <p class="text-lg text-gray-800">Wuhan Jinshixing Robotics Automation Eng. Co., Ltd. | Wuhan, China</p>
+                            <p class="text-sm text-gray-600">Feb 2025 – Present</p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 ml-2 mt-1 space-y-0.5">
+                                <li>Taught courses on PLC (Siemens S7-1200) and industrial automation applications for vocational students.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm p-4 border-t border-gray-200 mt-10">
+            © 2025 Hujie Wei. Built with Tailwind CSS.
+        </footer>
+
     </main>
-  </div>
+
+    <!-- JavaScript for Smooth Scrolling and Icon Initialization -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Smooth scrolling function
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            const mainContent = document.getElementById('main-content');
+            if (element && mainContent) {
+                // Adjust for the height of the sticky navbar (approx 64px based on padding)
+                const offset = 64; 
+                
+                // Calculate the position relative to the mainContent's scroll position
+                const targetPosition = element.offsetTop - offset;
+
+                mainContent.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+
+                updateNavHighlight(id);
+            }
+        }
+        
+        // Function to update the active navigation link style
+        function updateNavHighlight(activeId) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-indigo-900', 'font-bold');
+                link.classList.add('text-gray-600', 'font-semibold');
+            });
+
+            const activeLink = document.querySelector(`button[onclick*="${activeId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('text-indigo-900', 'font-bold');
+                activeLink.classList.remove('text-gray-600', 'font-semibold');
+            }
+        }
+
+        // Handle scroll event for section highlighting
+        window.onload = function() {
+            const mainContent = document.getElementById('main-content');
+            const sections = ['about', 'research', 'publications', 'experience'];
+            
+            // Set initial highlight
+            updateNavHighlight('about');
+
+            mainContent.addEventListener('scroll', () => {
+                let current = '';
+                // Adjust scroll position to account for the sticky navbar height
+                const scrollPos = mainContent.scrollTop + 70; 
+
+                sections.forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                        const top = section.offsetTop;
+                        const bottom = top + section.offsetHeight;
+                        
+                        if (scrollPos >= top && scrollPos < bottom) {
+                            current = id;
+                        }
+                    }
+                });
+                
+                if (current) {
+                    updateNavHighlight(current);
+                }
+            });
+        };
+
+    </script>
 </body>
 </html>
