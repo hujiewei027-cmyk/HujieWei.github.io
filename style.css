@@ -143,15 +143,16 @@ footer a:hover {
 .hero-header {
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: 50% 25%;  /* 调整视窗聚焦区域（例如靠上 25%） */
   background-repeat: no-repeat;
-  height: 400px;
+  min-height: 45vh;              /* 响应式高度：45% 的视窗高度 */
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 
 /* 半透明遮罩，让文字更清晰 */
 .hero-header .overlay {
