@@ -355,28 +355,47 @@
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+        
+        // 辅助函数：判断是否为桌面布局 (Tailwind 'lg' breakpoint)
+        function isDesktopLayout() {
+            return window.innerWidth >= 1024;
+        }
 
-        // Smooth scrolling function
+        // 滚动跳转函数 - 修复：根据屏幕尺寸决定滚动 window 还是 #main-content
         function scrollToSection(id) {
             const element = document.getElementById(id);
-            const mainContent = document.getElementById('main-content');
-            if (element && mainContent) {
-                // Adjust for the height of the sticky navbar (approx 64px based on padding)
-                const offset = 64; 
-                
-                // Calculate the position relative to the mainContent's scroll position
+            const isDesktop = isDesktopLayout();
+            const offset = 64; // Sticky navbar 的高度
+
+            if (element) {
+                // targetPosition 是相对于整个文档顶部的绝对位置
                 const targetPosition = element.offsetTop - offset;
 
-                mainContent.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
+                if (isDesktop) {
+                    // 桌面端：滚动 #main-content 容器
+                    const mainContent = document.getElementById('main-content');
+                    if (mainContent) {
+                        // 计算元素相对于 mainContent 容器顶部的相对位置
+                        const relativePosition = element.offsetTop - mainContent.offsetTop - offset;
+                        
+                        mainContent.scrollTo({
+                            top: relativePosition,
+                            behavior: "smooth"
+                        });
+                    }
+                } else {
+                    // 移动端：滚动整个窗口
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+                }
 
                 updateNavHighlight(id);
             }
         }
         
-        // Function to update the active navigation link style
+        // 更新导航链接高亮样式
         function updateNavHighlight(activeId) {
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-indigo-900', 'font-bold');
@@ -389,23 +408,32 @@
                 activeLink.classList.remove('text-gray-600', 'font-semibold');
             }
         }
-
-        // Handle scroll event for section highlighting
-        window.onload = function() {
+        
+        // 设置滚动监听器，用于根据滚动位置高亮导航链接
+        let scrollHandler = null;
+        
+        function setupScrollListener() {
+             // 清除旧的监听器以防止重复
             const mainContent = document.getElementById('main-content');
-            const sections = ['about', 'research', 'publications', 'experience', 'awards'];
+            if (scrollHandler) {
+                mainContent.removeEventListener('scroll', scrollHandler);
+                window.removeEventListener('scroll', scrollHandler);
+            }
             
-            // Set initial highlight
-            updateNavHighlight('about');
-
-            mainContent.addEventListener('scroll', () => {
+            const isDesktop = isDesktopLayout();
+            const scrollableElement = isDesktop ? mainContent : window;
+            
+            // 滚动处理逻辑
+            scrollHandler = function() {
+                const sections = ['about', 'research', 'publications', 'awards', 'experience'];
                 let current = '';
-                // Adjust scroll position to account for the sticky navbar height
-                const scrollPos = mainContent.scrollTop + 70; 
+                // 增加偏移量 (70px) 来判断当前在哪一区块
+                const scrollPos = (isDesktop ? mainContent.scrollTop : window.scrollY) + 70; 
 
                 sections.forEach(id => {
                     const section = document.getElementById(id);
                     if (section) {
+                        // offsetTop 始终是元素相对于文档顶部的距离
                         const top = section.offsetTop;
                         const bottom = top + section.offsetHeight;
                         
@@ -418,9 +446,24 @@
                 if (current) {
                     updateNavHighlight(current);
                 }
-            });
-        };
+            };
+            
+            // 添加新的监听器
+            scrollableElement.addEventListener('scroll', scrollHandler);
+        }
 
+        // 页面加载完成和初始化设置
+        window.onload = function() {
+            // 设置初始高亮
+            updateNavHighlight('about');
+            
+            // 首次设置滚动监听
+            setupScrollListener();
+            
+            // 当窗口大小改变时，重新设置监听器（用于响应式切换）
+            window.addEventListener('resize', setupScrollListener);
+        };
+        
     </script>
 </body>
 </html>
