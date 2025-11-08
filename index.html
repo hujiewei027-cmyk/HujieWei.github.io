@@ -153,17 +153,22 @@
     <main id="main-content" class="flex-grow bg-gray-50 h-full lg:h-screen p-0">
         
         <!-- Sticky Navigation Bar -->
-       <nav id="navbar" class="bg-white shadow-lg fixed w-full top-0 z-50 p-4 lg:px-10">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Logo / 姓名: 移动端更紧凑 -->
-            <div class="text-xl sm:text-2xl font-extrabold text-primary flex-shrink-0 mr-2">
-                Homepage
+       <!-- 导航栏 (固定在顶部) -->
+    <nav id="navbar" class="bg-white shadow-lg fixed w-full top-0 z-50 p-4 lg:px-10">
+        <!-- 适应手机端：默认堆叠 (flex-col)，在 sm 尺寸以上才变为行布局 (sm:flex-row) -->
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
+            
+            <!-- Logo / 姓名: 在手机端会占据一行并留出底部间距 (mb-2) -->
+            <div class="text-xl sm:text-2xl font-extrabold text-primary flex-shrink-0 mb-2 sm:mb-0">
+                Hujie Wei
             </div>
             
-            <!-- 导航链接区域 (核心修改区域) -->
-            <!-- flex-1: 占据剩余所有空间。space-x-2: 间距最小化。justify-end: 确保靠右对齐。 -->
-            <div class="flex flex-1 space-x-2 overflow-x-auto pb-1 justify-end">
-                <!-- 链接文字都设置为 text-sm，以节省横向空间 -->
+            <!-- 导航链接区域 (核心修改区域: 允许换行) -->
+            <!-- flex-wrap: 允许链接自动换行，避免溢出。 -->
+            <!-- gap-x-3 gap-y-1: 提供水平和垂直间距，让换行后的内容不拥挤。 -->
+            <!-- sm:flex-nowrap sm:space-x-4: 在桌面端恢复到不换行的单行布局和标准间距。 -->
+            <div class="flex flex-wrap gap-x-3 gap-y-1 sm:flex-nowrap sm:space-x-4 sm:justify-end">
+                <!-- 链接文字仍保持 text-sm 以紧凑显示 -->
                 <button onclick="scrollToSection('about')" class="nav-link text-primary font-bold hover:text-indigo-900 transition flex-shrink-0 px-2 py-1 rounded-md text-sm">About Me</button>
                 <button onclick="scrollToSection('research')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition flex-shrink-0 px-2 py-1 rounded-md text-sm">Research</button>
                 <button onclick="scrollToSection('publications')" class="nav-link text-gray-600 font-semibold hover:text-indigo-900 transition flex-shrink-0 px-2 py-1 rounded-md text-sm">Publications</button>
